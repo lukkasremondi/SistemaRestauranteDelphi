@@ -1,0 +1,64 @@
+unit Principal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg, Vcl.ExtCtrls,
+  Vcl.Menus, Vcl.Buttons;
+
+type
+  TFrmPrincipal = class(TForm)
+    ImgBack: TImage;
+    MainMenu1: TMainMenu;
+    Cadastros1: TMenuItem;
+    Produtos1: TMenuItem;
+    Movimentaes1: TMenuItem;
+    Pedidos1: TMenuItem;
+    Relatrios1: TMenuItem;
+    Sair1: TMenuItem;
+    Reservas1: TMenuItem;
+    Clientes1: TMenuItem;
+    Fornecedores1: TMenuItem;
+    Mesas1: TMenuItem;
+    CadastrodeProdutos1: TMenuItem;
+    EntradasdeProdutos1: TMenuItem;
+    NveldoEstoque1: TMenuItem;
+    NovaVenda1: TMenuItem;
+    EntradaseSadas1: TMenuItem;
+    Gastos1: TMenuItem;
+    Pagamentos1: TMenuItem;
+    eladePedidos1: TMenuItem;
+    NovaReserva1: TMenuItem;
+    ConsultarReservas1: TMenuItem;
+    Logout1: TMenuItem;
+    btnProdutos: TSpeedButton;
+    btnMovimentacoes: TSpeedButton;
+    btnPedidos: TSpeedButton;
+    btnReservas: TSpeedButton;
+    btnRelatorio: TSpeedButton;
+    Pratos1: TMenuItem;
+    Cargo1: TMenuItem;
+    procedure Clientes1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  FrmPrincipal: TFrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+uses Funcionarios;
+
+procedure TFrmPrincipal.Clientes1Click(Sender: TObject);
+begin
+FrmFuncionarios := TFrmFuncionarios.Create(self);
+FrmFuncionarios.ShowModal;
+end;
+
+end.
